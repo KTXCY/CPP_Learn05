@@ -271,53 +271,53 @@
 //    return 0;
 //}
 
-struct ListNode {
-    int data;        // 节点数据
-    ListNode* next;  // 指向下一个节点的指针
-
-    ListNode(int x) : data(x), next(nullptr) {}  // 构造函数
-};
-
-class LinkedList {
-private:
-    ListNode* head;  // 头结点
-
-public:
-    // 构造函数
-    LinkedList() : head(new ListNode(0)) {}
-
-    // 析构函数，用于释放内存
-    ~LinkedList() {
-        ListNode* temp = head;
-        while (temp) {
-            ListNode* to_delete = temp;
-            temp = temp->next;
-            delete to_delete;
-        }
-    }
-
-    // 插入节点到链表尾部
-    void append(int value) {
-        ListNode* new_node = new ListNode(value);
-        if (head->next == nullptr) {
-            head->next = new_node;
-        } else {
-            ListNode* current = head;
-            while (current->next != nullptr) {
-                current = current->next;
-            }
-            current->next = new_node;
-        }
-    }
-
-    // 打印链表
-    void printList() {
-        ListNode* temp = head->next;
-        while (temp) {
-            std::cout << temp->data << " ";
-            temp = temp->next;
-        }
-        std::cout << std::endl;
-    }
-};
+//struct ListNode {
+//    int data;        // 节点数据
+//    ListNode* next;  // 指向下一个节点的指针
+//
+//    ListNode(int x) : data(x), next(nullptr) {}  // 构造函数
+//};
+//
+//class LinkedList {
+//private:
+//    ListNode* head;  // 头结点
+//
+//public:
+//    // 构造函数
+//    LinkedList() : head(new ListNode(0)) {}
+//
+//    // 析构函数，用于释放内存
+//    ~LinkedList() {
+//        ListNode* temp = head;
+//        while (temp) {
+//            ListNode* to_delete = temp;
+//            temp = temp->next;
+//            delete to_delete;
+//        }
+//    }
+//
+//    // 插入节点到链表尾部
+//    void append(int value) {
+//        ListNode* new_node = new ListNode(value);
+//        if (head->next == nullptr) {
+//            head->next = new_node;
+//        } else {
+//            ListNode* current = head;
+//            while (current->next != nullptr) {
+//                current = current->next;
+//            }
+//            current->next = new_node;
+//        }
+//    }
+//
+//    // 打印链表
+//    void printList() {
+//        ListNode* temp = head->next;
+//        while (temp) {
+//            std::cout << temp->data << " ";
+//            temp = temp->next;
+//        }
+//        std::cout << std::endl;
+//    }
+//};
 
