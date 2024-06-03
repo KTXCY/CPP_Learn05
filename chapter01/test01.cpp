@@ -245,18 +245,48 @@
 //    cout << endl;
 //}
 //
+//int ListEmpty(LinkList L) {
+//    if (L->next) {
+//        return 0;
+//    } else {
+//        return 1;
+//    }
+//}
+//
+//void ClearList_L(LinkList L) {
+//    LNode *p = L->next;
+//    LNode *q = nullptr;
+//    while (p) {
+//        q = p->next;
+//        delete p;
+//        p = q;
+//    }
+//    L->next = nullptr;
+//}
+//
+//int ListLength_L(LinkList L) {
+//    LNode *p = L;
+//    p = p->next;
+//    int i = 0;
+//    while (p) {
+//        i++;
+//        p = p->next;
+//    }
+//    return i;
+//}
+//
+//bool GetElem_L(LinkList L, int i, ElemType &e){
+//    LNode *p = L->next;
+//    int j = 1;
+//    while
+//
+//}
+//
 //int main() {
 //    LNode *L;
 //    InitList_L(&L);
-//    ListInsert_L(&L, 1, 12);
-//    ListInsert_L(&L, 1, 3);
-//    ListInsert_L(&L, 1, 4);
-//    ListInsert_L(&L, 1, 8);
-//    ListInsert_L(&L, 1, 9);
-//    ListInsert_L(&L, 1, 8);
-//    ListInsert_L(&L, 1, 8);
-//    PrintList_L(L);
-//    DeleteList(&L, 3);
+//    int a = ListEmpty(L);
+//    cout << a << endl;
 //    PrintList_L(L);
 //    DestroyList_L(&L);
 //    return 0;
