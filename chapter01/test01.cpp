@@ -182,10 +182,10 @@ using namespace std;
 
 typedef int ElemType;
 
-typedef struct LNode {
-    ElemType data;
-    struct LNode *next;
-} LNode, *LinkList;
+//typedef struct LNode {
+//    ElemType data;
+//    struct LNode *next;
+//} LNode, *LinkList;
 
 void InitList_L(LinkList *L) {
     *L = (LNode *) malloc(sizeof(LNode));
