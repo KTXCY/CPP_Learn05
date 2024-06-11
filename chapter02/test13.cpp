@@ -116,80 +116,80 @@
 //    return 0;
 //}
 
-#include <iostream>
-
-using namespace std;
-
-#include <cstdlib>
-
-typedef int ElemType;
-
-typedef struct LNode {
-    ElemType data;
-    struct LNode *next;
-} LNode, *LinkList;
-
-bool InitCirList(LinkList *L) {
-    auto *head = (LNode *) malloc(sizeof(LNode));
-    if (head == nullptr) {
-        perror("Memory allocation failed for head");
-        return false;
-    }
-    (*L) = head;
-    (*L)->data = 0;
-    (*L)->next = (*L);
-    return true;
-}
-
-void DestroyCirList(LinkList *L) {
-    LNode *p = (*L)->next;
-    while (p != (*L)) {
-        LNode *q = p;
-        p = p->next;
-        free(q);
-    }
-    free(*L);
-}
-
-bool insertAt(LinkList *head, int i, ElemType val) {
-    if (!(*head)) {
-        perror("Head is NULL");
-        return false;
-    }
-    if (i < 1) {
-        cout << "Invalid position: " << i << endl;
-        return false;
-    }
-    auto *NewNode = (LNode *) malloc(sizeof(LNode));
-    if (!NewNode) {
-        perror("Memory allocation failed for new node");
-        return false;
-    }
-    NewNode->data = val;
-    LNode *temp = (*head);
-    int j = 0;
-    while (temp->next != (*head) && j < i - 1) {
-        temp = temp->next;
-        j++;
-    }
-    if (j >= i - 1) {
-        NewNode->next = temp->next;
-        temp->next = NewNode;
-        return true;
-    } else {
-        cout << "fail " << endl;
-        free(NewNode);
-        return false;
-    }
-}
-
-int main() {
-    LNode *L;
-    InitCirList(&L);
-    insertAt(&L, 1, 2);
-    insertAt(&L, 0, 89);
-    DestroyCirList(&L);
-    L = nullptr;
-    return 0;
-}
+//#include <iostream>
+//
+//using namespace std;
+//
+//#include <cstdlib>
+//
+//typedef int ElemType;
+//
+//typedef struct LNode {
+//    ElemType data;
+//    struct LNode *next;
+//} LNode, *LinkList;
+//
+//bool InitCirList(LinkList *L) {
+//    auto *head = (LNode *) malloc(sizeof(LNode));
+//    if (head == nullptr) {
+//        perror("Memory allocation failed for head");
+//        return false;
+//    }
+//    (*L) = head;
+//    (*L)->data = 0;
+//    (*L)->next = (*L);
+//    return true;
+//}
+//
+//void DestroyCirList(LinkList *L) {
+//    LNode *p = (*L)->next;
+//    while (p != (*L)) {
+//        LNode *q = p;
+//        p = p->next;
+//        free(q);
+//    }
+//    free(*L);
+//}
+//
+//bool insertAt(LinkList *head, int i, ElemType val) {
+//    if (!(*head)) {
+//        perror("Head is NULL");
+//        return false;
+//    }
+//    if (i < 1) {
+//        cout << "Invalid position: " << i << endl;
+//        return false;
+//    }
+//    auto *NewNode = (LNode *) malloc(sizeof(LNode));
+//    if (!NewNode) {
+//        perror("Memory allocation failed for new node");
+//        return false;
+//    }
+//    NewNode->data = val;
+//    LNode *temp = (*head);
+//    int j = 0;
+//    while (temp->next != (*head) && j < i - 1) {
+//        temp = temp->next;
+//        j++;
+//    }
+//    if (j >= i - 1) {
+//        NewNode->next = temp->next;
+//        temp->next = NewNode;
+//        return true;
+//    } else {
+//        cout << "fail " << endl;
+//        free(NewNode);
+//        return false;
+//    }
+//}
+//
+//int main() {
+//    LNode *L;
+//    InitCirList(&L);
+//    insertAt(&L, 1, 2);
+//    insertAt(&L, 0, 89);
+//    DestroyCirList(&L);
+//    L = nullptr;
+//    return 0;
+//}
 
